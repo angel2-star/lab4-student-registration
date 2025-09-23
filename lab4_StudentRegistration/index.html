@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Registration</h1>
+            <p class="tagline">Create your profile and join our community</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="form-section">
+                <h2 class="form-title">Registration Form</h2>
+                <form id="regForm" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required aria-describedby="firstNameError">
+                        <small class="error" id="firstNameError"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required aria-describedby="lastNameError">
+                        <small class="error" id="lastNameError"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required aria-describedby="emailError"/>
+                        <small class="error" id="emailError"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="programme">Programme <span aria-hidden="true">*</span></label>
+                        <select id="programme" name="programme" required aria-describedby="programmeError">
+                            <option value="">Select a programme</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Software Engineering">Software Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                        </select>
+                        <small class="error" id="programmeError"></small>
+                    </div>
+                    
+                    <fieldset>
+                        <legend>Year of Study <span aria-hidden="true">*</span></legend>
+                        <label><input type="radio" name="year" value="1" required/> 1</label>
+                        <label><input type="radio" name="year" value="2"/> 2</label>
+                        <label><input type="radio" name="year" value="3"/> 3</label>
+                        <label><input type="radio" name="year" value="4"/> 4</label>
+                        <label><input type="radio" name="year" value="5+"/> 5+</label>
+                        <small class="error" id="yearError"></small>
+                    </fieldset>
+                    
+                    <div class="form-group">
+                        <label>Interests (Select at least one) <span aria-hidden="true">*</span></label>
+                        <div class="interests-container" id="interestsContainer" aria-describedby="interestsError">
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="webDev" name="interests" value="Web Development">
+                                <label for="webDev">Web Development</label>
+                            </div>
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="mobileDev" name="interests" value="Mobile Development">
+                                <label for="mobileDev">Mobile Development</label>
+                            </div>
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="ai" name="interests" value="Artificial Intelligence">
+                                <label for="ai">Artificial Intelligence</label>
+                            </div>
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="dataScience" name="interests" value="Data Science">
+                                <label for="dataScience">Data Science</label>
+                            </div>
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="cloud" name="interests" value="Cloud Computing">
+                                <label for="cloud">Cloud Computing</label>
+                            </div>
+                            <div class="interest-checkbox">
+                                <input type="checkbox" id="iot" name="interests" value="Internet of Things">
+                                <label for="iot">Internet of Things</label>
+                            </div>
+                        </div>
+                        <small class="error" id="interestsError"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoURL">Photo URL</label>
+                        <input type="url" id="photoURL" name="photoURL" placeholder="https://example.com/photo.jpg">
+                        <small class="error" id="photoURLError"></small>
+                    </div>
+                    
+                    <button type="submit">Add Student</button>
+                    <div class="success-message" id="successMessage">Profile created successfully!</div>
+                    <div aria-live="polite" class="sr" id="live"></div>
+                </form>
+            </div>
+            
+            <div class="output-section">
+                <h2 class="form-title">Profile Cards</h2>
+                <div class="profile-cards" id="cards">
+                    <div class="empty-state" id="emptyState">
+                        <h3>No profiles yet</h3>
+                        <p>Submit the registration form to create profile cards</p>
+                    </div>
+                </div>
+                
+                <div class="summary-section">
+                    <h2 class="form-title">Summary Table</h2>
+                    <table id="summary">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Programme</th>
+                                <th>Year</th>
+                                <th>Interests</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" style="text-align: center;">No data available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Student Registration System</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
